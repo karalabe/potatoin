@@ -28,7 +28,7 @@ contract Potatoin {
     mapping(address => uint) trashes;
     mapping(address => uint) recycled;
 
-    // field and fields define the potato fields owned by individual famers,
+    // field and fields define the potato fields owned by individual farmers,
     // along with the number of potatoes in them and the sowing time/
     struct field {
         uint potatoes;
@@ -232,7 +232,7 @@ contract Potatoin {
         if (cellars[msg.sender] < potatoes) {
             return false;
         }
-        // Recycle the remote rotten ones and execute the transfre
+        // Recycle the remote rotten ones and execute the transfer
         recycle(to);
         cellars[msg.sender] -= potatoes;
         cellars[to]         += potatoes;
